@@ -1,12 +1,12 @@
 ansible-role-configdrive
 ========================
 
-Configdrive ansible role for cloud-init with OpenStack Ironic. 
+Ansible role to create config-drives for OpenStack Ironic. 
 It creates OpenStack config-drives data for nodes and it is able
 to setup complex networking configuration like bonding, vlans 
 and bridges on Debian and RedHat based distributions. Note 
 that the images have to have support for those features 
-(kernel modules, packages, ...). This tools just create the 
+(kernel modules, packages, ...). This tool just create the 
 configuration files which are going to be injected in the host at 
 boot time using Cloud-Init.
 
