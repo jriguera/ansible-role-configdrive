@@ -2,7 +2,13 @@ ansible-role-configdrive
 ========================
 
 Configdrive ansible role for cloud-init with OpenStack Ironic. 
-It creates OpenStack config-drives data for nodes.
+It creates OpenStack config-drives data for nodes and it is able
+to setup complex networking configuration like bonding, vlans 
+and bridges on Debian and RedHat based distributions. Note 
+that the images have to have support for those features 
+(kernel modules, packages, ...). This tools just create the 
+configuration files which are going to be injected in the host at 
+boot time using Cloud-Init.
 
 This playbook is intended to be executed prior to the deployments 
 of nodes via Ironic. It creates a basic configuration drive 
@@ -86,7 +92,7 @@ Usage
 -----
 
 Have a look at the `site.yml` and type `vagrant up`, go to the folder
-'/tmp/configdrive' inside the vagrant vm and you will see the compresed
+`/tmp/configdrive` inside the vagrant vm and you will see the compresed
 iso volume and all the folder/files structure included in it. 
 
 
