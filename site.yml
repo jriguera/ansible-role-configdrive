@@ -1,6 +1,10 @@
 ---
 - hosts: all
   sudo: true
+
+  pre_tasks:
+    - apt: name=genisoimage state=present
+
   roles:
     - role: .
       configdrive_os_family: "Debian"

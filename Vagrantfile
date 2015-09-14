@@ -46,7 +46,6 @@ Vagrant.configure(2) do |config|
     # documentation for more information about their specific syntax and use.
     master.vm.provision "shell", inline: <<-SHELL
         sudo apt-get update
-        sudo apt-get install genisoimage
     SHELL
     master.vm.provision "ansible" do |ansible|
   	ansible.playbook = "site.yml"
