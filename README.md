@@ -19,11 +19,9 @@ file https://help.ubuntu.com/community/CloudInit
 
 ## Requirements
 
-It does not install packages on the target host, it just creates the 
-folders and files needed to create a config-drive volume, So, be 
-aware that you probably you will need to install `genisoimage`, 
-`base64` and `gzip`.
-
+This role install `genisoimage` on the target host. It assumes that
+the packages `base64` and `gzip` are installed. The packages are 
+needed only in case whether `configdrive_volume_path` is defined.
 
 ## Configuration
 

@@ -1,3 +1,7 @@
 ---
 configdrive_os_network_path: "/etc/network/interfaces.d/"
 
+configdrive_packages:
+  genisoimage:
+    state: latest
+

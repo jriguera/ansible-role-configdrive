@@ -3,6 +3,9 @@
   include_vars: "{{ configdrive_os_family }}.yml"
   tags: ["distribution"]
 
+- include: install.yml
+  tags: ["configdrive", "install"]
+
 - name: Setup configdrive instance folder
   set_fact: configdrive_instance_dir="{{ configdrive_uuid }}"
   when: not configdrive_instance_dir is defined or configdrive_instance_dir is none
