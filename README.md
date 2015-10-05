@@ -94,4 +94,4 @@ iso volume and all the folder/files structure included in it.
 
 ## Author Information
 
-José Riguera López
+Jose Riguera Lopez
