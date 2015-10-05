@@ -4,6 +4,9 @@
   tags: ["distribution"]
 
 - include: install.yml
+  when: >
+    configdrive_volume_path is defined and not 
+    configdrive_volume_path is none
   tags: ["configdrive", "install"]
 
 - name: Setup configdrive instance folder
