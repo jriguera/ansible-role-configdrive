@@ -1,4 +1,5 @@
-# ansible-role-configdrive
+ansible-role-configdrive
+========================
 
 Ansible role to create config-drives for OpenStack Ironic. 
 It creates OpenStack config-drives data for nodes and it is able
@@ -17,13 +18,17 @@ user to login to the host, and other files like `/etc/hosts` or
 file https://help.ubuntu.com/community/CloudInit
 
 
-## Requirements
+Requirements
+------------
 
-This role install `genisoimage` on the target host. It assumes that
-the packages `base64` and `gzip` are installed. The packages are 
-needed only in case whether `configdrive_volume_path` is defined.
+It does not install packages on the target host, it just creates the 
+folders and files needed to create a config-drive volume, So, be 
+aware that you probably you will need to install `genisoimage`, 
+`base64` and `gzip`.
 
-## Configuration
+
+Configuration
+-------------
 
 Role parameters
 ```
@@ -83,13 +88,15 @@ configdrive_config_dir_delete: False
 #    backend: ["eth0"]
 ```
 
-## Usage
+Usage
+-----
 
 Have a look at the `site.yml` and type `vagrant up`, go to the folder
 `/tmp/configdrive` inside the vagrant vm and you will see the compresed
 iso volume and all the folder/files structure included in it. 
 
 
-## Author Information
+Author Information
+------------------
 
-Jose Riguera Lopez
+José Riguera López
