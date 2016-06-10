@@ -18,6 +18,9 @@ user to login to the host, and other files like `/etc/hosts` or
 file https://help.ubuntu.com/community/CloudInit
 
 
+Ansible 2.0, works with Ubuntu Trusty, Xenial and Centos 7
+
+
 Requirements
 ------------
 
