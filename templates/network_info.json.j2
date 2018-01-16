@@ -5,6 +5,7 @@
     "links": [
 {%- for dev in configdrive_network_device_list %}
         {
+            "name": "{{ dev.device }}",
             "id": "{{ dev.device }}",
             "type": "{{ dev.type | default('phy') }}",
 {%- if dev.mac is defined %}
