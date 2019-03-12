@@ -1,6 +1,11 @@
 ansible-role-configdrive
 ========================
 
+**Currently this repo is not being actively maintained. I suggest you use
+the fork maintained by David Blaisonneau: https://gitlab.com/davidblaisonneau-orange/ansible-role-configdrive**
+
+-----------------------------------------------------------------
+
 Ansible role to create config-drives for OpenStack Ironic. 
 It creates OpenStack config-drives data for nodes and it is able
 to setup complex networking configuration like bonding, vlans 
