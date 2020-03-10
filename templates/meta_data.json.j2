@@ -14,7 +14,7 @@
     "hostname": "{{ configdrive_fqdn }}",
     "name": "{{ configdrive_name }}",
     "meta": {
-{%- for (key, value) in configdrive_meta.iteritems() %}
+{%- for (key, value) in configdrive_meta.items() %}
         "{{ key }}": "{{ value }}"{% if not loop.last %},{% endif %}
 {%- endfor %} 
     },
