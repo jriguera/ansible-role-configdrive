@@ -35,21 +35,20 @@
         ],
 {%- endif %}
         "routes": [
-{%- if dev.route is defined %}
-{%- for i in dev.route %}
+{%- set route_list=[] %}
+{%- if dev.gateway is defined %}
+{%- set _=route_list.append({"network": "0.0.0.0", "netmask": "0.0.0.0", "gateway": dev.gateway}) %}
+{%- endif %}
+{%- for i in dev.route | default([]) %}
+{%- set _=route_list.append({"network": i.network, "netmask": i.netmask, "gateway": i.gateway}) %}
+{%- endfor %}
+{%- for i in route_list %}
             {
                 "network": "{{ i.network }}",
                 "netmask": "{{ i.netmask}}",
                 "gateway": "{{ i.gateway }}"
-            },
+            }{% if not loop.last %},{% endif %}
 {%- endfor %}
-{%- endif %}     
-            {
-                "network": "0.0.0.0",
-                "netmask": "0.0.0.0"{% if dev.gateway is defined %},
-                "gateway": "{{ dev.gateway }}"
-{%- endif %}
-            }            
         ]
     }{% if not loop.last %},{% endif %}
 {%- endfor %}
