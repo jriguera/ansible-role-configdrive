@@ -6,5 +6,11 @@ auto lo
 iface lo inet loopback
 
 # Load the configuration from the folder
+{% if configdrive_debian_network_interfaces_supports_glob | bool %}
 source /etc/network/interfaces.d/*
+{% else %}
+{% for dev in configdrive_network_device_list %}
+source /etc/network/interfaces.d/ifcfg-{{ dev["device"] }}
+{% endfor %}
+{% endif %}
 

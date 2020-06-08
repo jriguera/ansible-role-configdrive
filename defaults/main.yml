@@ -63,3 +63,6 @@ configdrive_config_dir_delete: False
 #configdrive_user:
 #configdrive_group:
 
+# Whether Debian network configuration in /etc/network/interfaces supports a
+# glob in the include path.
+configdrive_debian_network_interfaces_supports_glob: true
