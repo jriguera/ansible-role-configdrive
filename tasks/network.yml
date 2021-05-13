@@ -89,7 +89,7 @@
 
 - name: Setup route configuration for RedHat
   template: 
-    src: "route_{{ ansible_os_family }}.j2"
+    src: "route_{{ ansible_facts.os_family }}.j2"
     dest: "{{ _configdrive_content_path }}/{{ configdrive_os_network_path }}/route-{{ item.device }}"
     owner: "{{ configdrive_user | default(omit) }}"
     group: "{{ configdrive_group | default(omit) }}"

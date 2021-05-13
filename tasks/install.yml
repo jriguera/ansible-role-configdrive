@@ -4,7 +4,7 @@
     name: "{{ item.key }}{{ '-' + item.version | default('*') }}"
     state: "{{ item.state | default('present') }}"
   with_dict: configdrive_packages
-  when: ansible_os_family == 'RedHat'
+  when: ansible_facts.os_family == 'RedHat'
   tags: ["redhat"]
 
 - name: Debian - Install required packages
@@ -12,5 +12,5 @@
     name: "{{ item.key }}{{ '=' + item.version | default('*') }}"
     state: "{{ item.state | default('present') }}"
   with_dict: configdrive_packages
-  when: ansible_os_family == 'Debian'
+  when: ansible_facts.os_family == 'Debian'
   tags: ["debian"]
