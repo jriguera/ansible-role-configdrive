@@ -4,12 +4,24 @@
 {%- set device_list=configdrive_network_device_list | map(attribute='device') | list %}
     "links": [
 {%- for dev in configdrive_network_device_list %}
+{%- if dev.type | default == "vlan" and dev.backend is defined and dev.backend[0] not in device_list %}
+        {
+            "name": "{{ dev.backend[0] }}",
+            "id": "{{ dev.backend[0] }}",
+            "type": "phy"
+        },
+{%- endif %}
         {
             "name": "{{ dev.device }}",
             "id": "{{ dev.device }}",
             "type": "{{ dev.type | default('phy') }}",
-{%- if dev.mac is defined %}
+{%- if dev.type | default == "vlan" and dev.backend is defined %}
+            "vlan_id": {{ dev.device.split('.')[1] }},
+            "vlan_link": "{{ dev.backend[0] }}",
+            "vlan_mac_address": {% if dev.mac is defined %}"{{ dev.mac }}"{% else %}null{% endif %},
+{%- elif dev.mac is defined %}
             "ethernet_mac_address": "{{ dev.mac }}",
+{%- endif %}
 {%- endif %}
             "mtu": "{{ dev.mtu | default(1500) }}"
         }{% if not loop.last %},{% endif %}
