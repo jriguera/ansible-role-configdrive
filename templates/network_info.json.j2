@@ -22,7 +22,6 @@
 {%- elif dev.mac is defined %}
             "ethernet_mac_address": "{{ dev.mac }}",
 {%- endif %}
-{%- endif %}
             "mtu": "{{ dev.mtu | default(1500) }}"
         }{% if not loop.last %},{% endif %}
 {%- endfor %}
