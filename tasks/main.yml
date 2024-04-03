@@ -29,7 +29,7 @@
     - "openstack/latest"
     - "openstack/content"
 
-- include: configdrive.yml
+- import_tasks: configdrive.yml
   tags: ["configdrive", "core"]
 
 - name: Cleanup instance configdrive folder
