@@ -13,11 +13,11 @@
 - name: Setup temporary folder for include files
   set_fact: _configdrive_content_path="{{ configdrive_config_dir }}/{{ configdrive_instance_dir }}/openstack/{{ configdrive_content_tmproot_dir }}"
 
-- include: ssh_public_key.yml
+- import_tasks: ssh_public_key.yml
   when: not configdrive_ssh_public_key is defined or configdrive_ssh_public_key is none
   tags: ["configdrive", "ssh"]
 
-- include: network.yml
+- import_tasks: network.yml
   tags: ["configdrive", "network"]
 
 - name: List the include files on temporary folder
