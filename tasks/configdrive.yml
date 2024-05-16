@@ -58,11 +58,10 @@
   with_items:
     - "openstack/2012-08-10"
     - "openstack/latest"
-  when: configdrive_config_user_data_path is defined
+  when: configdrive_config_user_data_path is defined and configdrive_config_user_data_path
 
 - name: Create configdrive volume file
-  shell: > 
+  shell: >
     genisoimage -R -V "{{ configdrive_voume_name }}" "{{ configdrive_config_dir }}/{{ configdrive_instance_dir }}" 
     | gzip -c | base64 > "{{ configdrive_volume_path }}/{{ configdrive_instance_dir }}.gz"
   when: configdrive_volume_path is defined and not configdrive_volume_path is none
-
