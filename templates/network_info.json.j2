@@ -27,9 +27,7 @@
 {%- endfor %}
     ],
     "networks": [
-{%- for dev in configdrive_network_device_list %}
-{%- if dev.address is not defined %}
-{%- else %}
+{%- for dev in configdrive_network_device_list | selectattr("address", "defined") %}
     {
         "id": "{{ dev.type | default('phy') }}-{{ dev.device }}",
         "type": "ipv4",
@@ -62,7 +60,6 @@
 {%- endfor %}
         ]
     }{% if not loop.last %},{% endif %}
-{%- endif %}   
 {%- endfor %}
     ],
     "services": [
