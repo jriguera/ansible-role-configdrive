@@ -22,7 +22,7 @@
 {%- elif dev.mac is defined %}
             "ethernet_mac_address": "{{ dev.mac }}",
 {%- endif %}
-            "mtu": "{{ dev.mtu | default(1500) }}"
+            "mtu": {{ dev.mtu | default(1500) | int }}
         }{% if not loop.last %},{% endif %}
 {%- endfor %}
     ],
