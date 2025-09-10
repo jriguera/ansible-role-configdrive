@@ -3,7 +3,7 @@ configdrive_content_tmproot_dir: "_"
 configdrive_voume_name: "config-2"
 
 configdrive_required_packages:
-  genisoimage:
+  xorriso:
     state: latest
   gzip:
     state: latest

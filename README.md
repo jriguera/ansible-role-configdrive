@@ -23,7 +23,7 @@ user to login to the host, and other files like `/etc/hosts` or
 file https://help.ubuntu.com/community/CloudInit
 
 
-Ansible 2.0, works with Ubuntu Trusty, Xenial and Centos 7
+Ansible 2.0, works with Ubuntu Jammy and above, RHEL 8 and above.
 
 
 Requirements
@@ -31,7 +31,7 @@ Requirements
 
 It does not install packages on the target host, it just creates the 
 folders and files needed to create a config-drive volume, So, be 
-aware that you probably you will need to install `genisoimage`, 
+aware that you probably you will need to install `xorriso`,
 `base64` and `gzip`.
 
 
