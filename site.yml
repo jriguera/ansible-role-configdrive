@@ -3,7 +3,7 @@
   become: true
 
   pre_tasks:
-    - apt: name=genisoimage state=present
+    - apt: name=xorriso state=present
 
   roles:
     - role: .
