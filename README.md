@@ -1,8 +1,7 @@
 ansible-role-configdrive
 ========================
 
-**Currently this repo is not being actively maintained. I suggest you use
-the fork maintained by David Blaisonneau: https://gitlab.com/davidblaisonneau-orange/ansible-role-configdrive**
+**Currently this repo is not being actively maintained.**
 
 -----------------------------------------------------------------
 
