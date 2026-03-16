@@ -12,10 +12,6 @@
   include_vars: "{{ configdrive_os_family }}.yml"
   tags: ["distribution"]
 
-- name: Setup configdrive instance folder
-  set_fact: configdrive_instance_dir="{{ configdrive_uuid }}"
-  when: configdrive_instance_dir is not defined or configdrive_instance_dir is none
-
 - name: Create configdrive metadata folders
   file:
     path: "{{ configdrive_config_dir }}/{{ configdrive_instance_dir }}/{{ item }}"
