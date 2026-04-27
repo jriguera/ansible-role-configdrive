@@ -58,7 +58,7 @@
   with_items:
     - "openstack/2012-08-10"
     - "openstack/latest"
-  when: configdrive_config_user_data_path is defined and configdrive_config_user_data_path
+  when: configdrive_config_user_data_path is defined and configdrive_config_user_data_path is truthy
 
 - name: Create configdrive volume file
   shell: >
