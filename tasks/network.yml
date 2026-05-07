@@ -46,7 +46,7 @@
     owner: "{{ configdrive_user | default(omit) }}"
     group: "{{ configdrive_group | default(omit) }}"
     mode: 0644
-  when: configdrive_resolv is defined and configdrive_resolv
+  when: configdrive_resolv is defined and configdrive_resolv is truthy
 
 - name: Setup static hosts file
   template:
@@ -55,7 +55,7 @@
     owner: "{{ configdrive_user | default(omit) }}"
     group: "{{ configdrive_group | default(omit) }}"
     mode: 0644
-  when: configdrive_hosts is defined and configdrive_hosts
+  when: configdrive_hosts is defined and configdrive_hosts is truthy
 
 - name: Setup network/interfaces for Debian
   template: 
